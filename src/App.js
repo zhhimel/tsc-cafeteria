@@ -1,25 +1,87 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Main from './layout/Main'
+import Home from './Home/Home'
+import Login from './login-register/Login'
+import Cart from './Cart/Cart'
+import Categories from './Categories/Categories'
+import Register from './login-register/Register';
+import Allfoods from './Categories/Allfoods/Allfoods';
+import Breakfast from './Categories/Breakfast/Breakfast';
+import Breakfastfoods from './Categories/Breakfast/Breakfastfoods';
+import { MyContextProvider } from './MyContext';
 
-function App() {
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Main></Main>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>
+      },
+      {
+
+        path: "/Home",
+        element: <Home></Home>,
+      },
+      {
+        path: "categories",
+        element: <Categories></Categories>,
+        children: [{}]
+      },
+      {
+        path: "Login",
+        element: <Login></Login>,
+        children: [
+          {
+
+          }
+        ]
+      },
+      {
+        path: "Register",
+        element: <Register></Register>
+      },
+      {
+        path: "cart",
+        element: <Cart></Cart>
+      },
+      {
+        path: "breakfastfoods",
+        element: <Breakfastfoods></Breakfastfoods>
+      },
+      {
+        path: "launch",
+        element: <Breakfastfoods></Breakfastfoods>
+      },
+      {
+        path: "dinner",
+        element: <Breakfastfoods></Breakfastfoods>
+      },
+      {
+        path: "snacks",
+        element: <Breakfastfoods></Breakfastfoods>
+      },
+      {
+        path: "allfoods",
+        element: <Allfoods></Allfoods>
+      }
+    ]
+  }
+])
+const App = () => {
+   
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <MyContextProvider >
+      <div>
+        <RouterProvider router={router}></RouterProvider>
+      </div>
+    </MyContextProvider>
+  )
 }
 
-export default App;
+export default App

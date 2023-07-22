@@ -1,0 +1,27 @@
+.carousel-container{
+    height: 500px;
+}
+.carousel-image{
+    height: 400px;
+    width:100;
+    object-fit: cover;
+}
+.button-style{
+    border: none;
+    color:white;
+    border-radius: 3rem;
+    background-color: rgb(243, 69, 69);
+}
+#orderbutton{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+.button-style:hover{
+    background-color: rgb(154, 5, 5);
+}
+.home-section{
+    padding-right: 5rem;
+}
+#homeh1{
+    font-family: 'Lilita One', cursive;
+}

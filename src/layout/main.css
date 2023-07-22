@@ -1,0 +1,26 @@
+#footer{
+    background-color: rgb(152, 154, 142);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+    color: #ffffff;
+}
+header{
+    background: rgb(193, 211, 123);
+}
+#body{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    min-height: 100vh;
+}
+#login-register{
+    position: fixed;
+    right: 0;
+}
+.link,p{
+    color:rgb(61, 84, 76);
+    text-decoration: none;
+}
